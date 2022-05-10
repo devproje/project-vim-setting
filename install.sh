@@ -1,19 +1,35 @@
 #!/bin/bash
 
-install() {
-	echo -e "\e[33mInstall plug..."
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+flag=$1
+vim_dir="$HOME/.vim"
+
+autoload_dir="$vim_dir/autoload"
+bundle_dir="$vim_dir/bundle"
+
+plug_url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vundle_url=https://github.com/VundleVim/Vundle.vim.git
+
+install_vundle() {
+	echo -e "\e[33mInstall plug...\e[0m"
+	curl -fLo $autoload_dir/plug.vim --create-dirs $plug_url
 	
-	echo -e "\e[33mInstall Vundle..."
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	echo -e "\e[33mInstall Vundle...\e[0m"
+	git clone $vundle_url $bundle_dir/Vundle.vim
 }
 
-if [ "$1" != "--ignore" ]; then
-	install
-fi
+copy_file() {
+	echo -e "\e[33mCopying .vimrc file...\e[0m"
+	cp vimrc ~/.vimrc
+	
+	echo -e "\e[32mInstall Complete! \e[0mIf you want a use this, please run vim and type \e[32m':PluginInstall'\e[0m"
+}
 
-echo -e "\e[33mCopying .vimrc file..."
-cp vimrc ~/.vimrc
+remove() {
+	echo -e "\e[33mRemove configuration...\e[0m"
+	rm -rf ~/.vimrc ~/.vim/
 
-echo -e "You must get in vim and type \e[32m':PluginInstall'"
+	echo -e "\e[32mRemove Complete!"
+}
+
+install_vundle
+copy_file
