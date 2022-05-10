@@ -27,7 +27,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/tmuxline.vim'
- 
+
+Plugin 'maxboisvert/vim-simple-complete'
+
 call vundle#end()
 filetype plugin indent on    " required
  
