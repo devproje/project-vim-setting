@@ -21,6 +21,7 @@ copy_file() {
 	echo -e "\e[33mCopying .vimrc file...\e[0m"
 	cp vimrc ~/.vimrc
 	
+	ln -s ~/.vimrc ~/.config/nvim/init.vim
 	echo -e "\e[32mInstall Complete! \e[0mIf you want a use this, please run vim and type \e[32m':PluginInstall'\e[0m"
 }
 

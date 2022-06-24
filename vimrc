@@ -1,7 +1,9 @@
 set nocompatible 		" be improved, required
 filetype off
- 
-map <F3> <ESC>:NERDTreeToggle<CR>
+
+map <leader> n :NERDTreeFocus<CR>
+map <C-n> :NERDTree<CR>
+map <C-t> :NERDTreeToggle<CR>
 map <F5> :tabnew<CR>
 map <F4> :bn<CR>
  
@@ -14,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
  
 " plus
 Plugin 'scrooloose/nerdtree'
+Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -32,8 +35,12 @@ Plugin 'maxboisvert/vim-simple-complete'
 
 call vundle#end()
 filetype plugin indent on    " required
- 
- 
+
+" Theme
+let g:gruvbox_contrast_dark="hard"
+set background=dark
+autocmd vimenter * colorscheme gruvbox
+
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
