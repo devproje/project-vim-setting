@@ -24,6 +24,7 @@ copy_file() {
 		rm ~/.config/nvim/init.vim
 	fi
 
+	mkdir ~/.config/nvim
 	ln -s ~/.vimrc ~/.config/nvim/init.vim
 	echo -e "\e[32mInstall Complete! \e[0mIf you want a use this, please run vim and type \e[32m':PluginInstall'\e[0m"
 }
