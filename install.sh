@@ -29,6 +29,7 @@ copy_file() {
 	echo -e "\e[32mInstall Complete! \e[0mIf you want a use this, please run vim and type \e[32m':PluginInstall'\e[0m"
 }
 
+# not work
 remove() {
 	echo -e "\e[33mRemove configuration...\e[0m"
 	rm -rf ~/.vimrc ~/.vim/
