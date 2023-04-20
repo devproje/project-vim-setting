@@ -1,6 +1,4 @@
 #!/bin/bash
-
-flag=$1
 vim_dir="$HOME/.vim"
 
 autoload_dir="$vim_dir/autoload"
@@ -27,14 +25,6 @@ copy_file() {
 	mkdir ~/.config/nvim
 	ln -s ~/.vimrc ~/.config/nvim/init.vim
 	echo -e "\e[32mInstall Complete! \e[0mIf you want a use this, please run vim and type \e[32m':PluginInstall'\e[0m"
-}
-
-# not work
-remove() {
-	echo -e "\e[33mRemove configuration...\e[0m"
-	rm -rf ~/.vimrc ~/.vim/
-
-	echo -e "\e[32mRemove Complete!"
 }
 
 install_vundle
